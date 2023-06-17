@@ -2,7 +2,7 @@
 
 > The CLI created and used by nablaFox
 
-**PMT** is a simple command-line interface designed to help manage projects efficiently. It provides various features to streamline project organization and enhance productivity 🔥
+**pmt** is a simple command-line interface designed to help manage projects efficiently. It provides various features to streamline project organization and enhance productivity 🔥
 
 ## Configuration
 
@@ -17,23 +17,23 @@ This will asks for:
 
 To update the previous configurations:
 
-```pmt --update [config] [new-config]```
+```pmt update [config] [new-config]```
 
 ## Project Management
 
-```pmt --list``` lists all the projects
+```pmt list``` lists all the projects
 
-```pmt --create [project]``` creates an empty project
+```pmt create [project]``` creates an empty project
 
-```pmt --clone [project]``` clones a project from your GitHub account
+```pmt clone [project]``` clones a project from your GitHub account
 
-```pmt --remove [project] ``` delete (locally) a project
+```pmt remove [project] ``` delete (locally) a project
 
-```pmt --select [project]``` selects a project
+```pmt select [project]``` selects a project
 
-```pmt --selected``` shows the selected project
+```pmt selected``` shows the selected project
 
-```pmt --open``` opens the selected project
+```pmt open``` opens the selected project
 
 ``pmt`` is equivalent to ```cd ProjectsDIR```
 

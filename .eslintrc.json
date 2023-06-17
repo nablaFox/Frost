@@ -32,6 +32,10 @@
 			"error",
 			"never"
 		],
+		"comma-dangle": [
+			"error",
+			"never"
+		],
 		"no-multiple-empty-lines": [
 			"error",
 			{

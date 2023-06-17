@@ -6,7 +6,6 @@ export default defineConfig({
 			'**/node_modules/**',
 			'**/dist/**',
 			'**/bin/**'
-		],
-		globals: true
+		]
 	}
 })
