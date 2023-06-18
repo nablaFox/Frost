@@ -1,23 +1,21 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "CommonJS",
-    "rootDir": "src",
-    "outDir": "dist",
+    "moduleResolution": "node",
     "strict": true,
-    "checkJs": false,
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
+		"noUnusedParameters": true,
     "useUnknownInCatchVariables": false,
     "removeComments": true,
-    "resolveJsonModule": true
-  },
-  "ts-node": {
-    "esm": true,
-    "transpileOnly": true,
-    "files": true
+    "resolveJsonModule": true,
+		"pretty": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true
   },
   "include": [
-    "src/**/*.ts"
-  ]
+    "src/**/*.ts",
+    "types/**/*.d.ts"
+  ],
+  "exclude": ["dist", "node_modules", "__tests__"]
 }

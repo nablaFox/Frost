@@ -1,10 +1,9 @@
 import { program } from 'commander'
 import { load } from './commands'
-
-const pkg = require('../package.json')
+import { version, name } from 'package.json'
 
 program
-	.name('pmt')
-	.version(pkg.version)
+	.name(name)
+	.version(version)
 
 load(program).parse()
