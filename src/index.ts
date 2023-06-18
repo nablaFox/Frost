@@ -1,11 +1,10 @@
 import { program } from 'commander'
+import { load } from './commands'
+
+const pkg = require('../package.json')
 
 program
 	.name('pmt')
-	.description('CLI to help manage local projects efficiently')
-	.version('0.0.1')
-	.action(() => {
-		console.log('default action')
-	})
+	.version(pkg.version)
 
-program.parse()
+load(program).parse()
