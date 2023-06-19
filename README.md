@@ -1,57 +1,66 @@
-# Project Management Tool 🔧
+# Frost ![Static Badge](https://img.shields.io/badge/npm-v1.14.0-blue) ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FnablaFox%2Ffrost%2Fmain%2Fpackage.json&query=engines.node&label=node&color=green1)
 
-> The CLI created and used by nablaFox
+> A simple CLI to organize your workflow
 
-**pmt** is a simple command-line interface designed to help manage projects efficiently. It provides various features to streamline project organization and enhance productivity 🔥
+- ⚡ Productivity Boost
+- 🎯 Minimalistic
+- 🐙 GitHub Integration 
+- 📈 Progress Tracking
+- 📁 Project Organization
+
+**Frost** is a command-line interface designed to help manage projects efficiently. It provides various features to streamline project organization and enhance productivity. It is intended to be used as a personal tool for organizing individual work (rather than for team work).
+
+## Install
+
+```sh
+npm install -g frost-cli
+```
 
 ## Configuration
 
 To configure the CLI run:
 
-```pmt init```
+```sh
+frost init
+```
 
 This will asks for:
-  - A github account
-  - A path where to save the projects
-  - An editor. Will be used to open the projects
+  - Your github token
+  - Your usual editor
+  - The path where to save projects locally
 
-To update the previous configurations:
+To update one of the the previous configurations run:
 
-```pmt update [config] [new-config]```
+```sh
+frost update [config] [value]
+```
 
 ## Project Management
 
-```pmt list``` lists all the projects
+```frost list``` lists all the projects.
 
-```pmt create [project]``` creates an empty project
+```frost create [project]``` creates a new project.  
+By default will create and configure also a github repo. This behavior is customizable, see ```frost help create```.
 
-```pmt clone [project]``` clones a project from your GitHub account
+```frost remove [project]``` deletes a project.  
+You can delete the github repo, the local version, or both. See ```frost help remove```.
 
-```pmt remove [project] ``` delete (locally) a project
+```frost select [project]``` selects a project.  
+By running this you can omit the ```[project]``` argument in commands like ```open```, ```status```, or ```task``` since they will refer to the selected project.
 
-```pmt select [project]``` selects a project
-
-```pmt selected``` shows the selected project
-
-```pmt open``` opens the selected project
-
-``pmt`` is equivalent to ```cd ProjectsDIR```
+```frost open [project]``` opens a project.
 
 ## Tasks
 
-How many times have you started a project and abandoned it after a while? A mistake that is often made is the _overload of features_. Start with small, easily achievable goals. Make a Todo List! 
+How many times have you started a project and abandoned it after a while? One mistake that is often made is _feature overload_. Start with **small**, **easily achievable** goals that define the overall structure of your project. Whenever you complete something and see a nice green color you will get dopamine which will keep you addicted 🔁
 
-Every time you complete something and you see a nice green color you will receive some dopamine which will essentially keep you addicted to what you are doing 🔁
+```frost task --assign [project]``` assigns a task to a project.
 
-```pmt status [options]``` shows the selected project tasks
+```frost task --complete [task] [project]``` marks a task as completed.
 
-You have several options:
-  - **a**: show all the tasks, including completed ones
-  - **A**: show the status of all projects
-  - **compact**: omit id's and dates
+```frost status [options] [project]``` shows the selected project tasks. For a global view you can use the ```-A``` flag.
 
-```pmt task --assign [task]``` to assign a task to the project
+You can use ```subtask``` to to break down a task into smaller goals, as the name suggests.
 
-```pmt task --complete [task-id]``` to mark a task as completed
-
-Run ```pmt --help``` for more
+\
+For a more complete experience feel free to explore all the features. Run ```frost help``` and enjoy! 🍀

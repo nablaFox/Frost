@@ -1,20 +1,22 @@
 {
-  "name": "pmt",
+  "name": "frost-cli",
   "version": "0.0.1",
   "license": "MIT",
   "author": "nablaFox",
   "description": "CLI to help manage local projects efficiently",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nablaFox/pmt.git"
+    "url": "git+https://github.com/nablaFox/Frost.git"
   },
   "keywords": [
     "cli",
     "projects",
-    "manage"
+    "manage",
+    "productivity",
+    "simple"
   ],
   "bin": {
-    "pmt": "./bin/pmt.js"
+    "frost": "./bin/frost.js"
   },
   "engines": {
     "node": ">= 12.22.12"
