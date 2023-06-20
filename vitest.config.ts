@@ -6,7 +6,15 @@ export default defineConfig({
 			'**/node_modules/**',
 			'**/dist/**',
 			'**/bin/**',
-			'**/types/**'
-		]
+			'**/types/**',
+			'__tests__/utils.ts'
+		],
+		globals: true
+	},
+	resolve: {
+		alias: {
+			'@': './src',
+			'@@': '.'
+		}
 	}
 })

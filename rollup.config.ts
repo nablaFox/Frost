@@ -12,7 +12,8 @@ const treeshake = {
 }
 
 const aliases = [
-	{ find: 'package.json', replacement: './package.json' }
+	{ find: '@', replacement: 'src' },
+	{ find: '@@', replacement: '.' }
 ]
 
 export default {
@@ -38,9 +39,7 @@ export default {
 			compress: true,
 			mangle: true
 		}),
-		alias({
-			entries: aliases
-		}),
+		alias({ entries: aliases }),
 		json()
 	],
 	treeshake

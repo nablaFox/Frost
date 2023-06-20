@@ -8,7 +8,7 @@
 - 📈 Progress Tracking
 - 📁 Project Organization
 
-**Frost** is a command-line interface designed to help manage projects efficiently. It provides various features to streamline project organization and enhance productivity. It is intended to be used as a personal tool for organizing individual work (rather than for team work).
+**Frost** is a command-line interface designed to help manage projects efficiently. It provides various features to streamline project organization and enhance productivity. It is intended to be used as a personal tool for organizing the individual workflow.
 
 ## Install
 

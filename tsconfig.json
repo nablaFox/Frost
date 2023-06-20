@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "moduleResolution": "node",
+    "baseUrl": ".",
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
@@ -11,11 +12,17 @@
     "resolveJsonModule": true,
 		"pretty": true,
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@@/*": ["./*"],
+      "@/*": ["src/*"]
+    },
+    "types": ["vitest/globals"]
   },
   "include": [
     "src/**/*.ts",
-    "types/**/*.d.ts"
+    "types/**/*.d.ts",
+    "__tests__/**/*.ts"
   ],
-  "exclude": ["dist", "node_modules", "__tests__"]
+  "exclude": ["dist", "node_modules"]
 }

@@ -1,11 +1,9 @@
 import { program } from 'commander'
 import { load } from './commands'
-import { version, name } from 'package.json'
-
-const cliName = name.split('-').shift() || name
+import { version, name } from './settings'
 
 program
-	.name(cliName)
+	.name(name)
 	.version(version)
 
 load(program).parse()
