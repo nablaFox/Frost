@@ -47,8 +47,8 @@ describe('config commands', () => {
 
 		it('should update the configuration', async () => {
 			initialize()
-			const { res } = await runCmd('update github.token test')
-			expect(res).toContain('github.token updated to test')
+			const { res } = await runCmd('update github.token test1')
+			expect(res).toContain('github.token: test --> test1')
 		})
 
 		it('should avoid updating if config is invalid', async () => {

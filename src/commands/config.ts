@@ -2,6 +2,7 @@ import { createCommand } from 'commander'
 import { cliInitialized as initialized, store } from '@/store'
 import { error, log, success } from '@/display'
 import { name } from '@/settings'
+import path from 'path'
 import prompts from 'prompts'
 
 const validate = (value: string, name: string) => value.length < 0
@@ -51,20 +52,17 @@ const initAction = async () => {
 
 	if (!githubToken || !projectsPath || !editor) return
 
+	const resolvedPath = projectsPath.replace(/^~(?=$|\/|\\)/, process.env.HOME || process.env.USERPROFILE || '')
+	const absolutePath = path.resolve(resolvedPath)
+
 	store.set('github.token', githubToken)
-	store.set('projects.path', projectsPath)
+	store.set('projects.path', absolutePath)
 	store.set('editor', editor)
 
 	success('CLI initialized')
 }
 
 const updateAction = async (config: string, value: string) => {
-	if (!initialized) {
-		error('CLI not initialized')
-		log(`Run **${name} config init** to initialize the CLI`)
-		return
-	}
-
 	if (config === undefined) {
 		error('Configuration to update not specified')
 		return
@@ -82,8 +80,14 @@ const updateAction = async (config: string, value: string) => {
 		return
 	}
 
+	const previous = store.get(config)
+
 	store.set(config, value)
-	success(`**${config}** updated to **${value}**`)
+	success(`${config}: **${previous}** --> **${value}**`)
+}
+
+const settingsAction = () => {
+	configOptions.forEach(option => log(`- **${option}**: ${store.get(option)}`))
 }
 
 export const init = createCommand('init')
@@ -95,3 +99,7 @@ export const update = createCommand('update')
 	.argument('[config]', 'the config to update')
 	.argument('[value]', 'the value to update the config to')
 	.action(updateAction)
+
+export const configs = createCommand('settings')
+	.description('See the CLI settings')
+	.action(settingsAction)

@@ -1,7 +1,10 @@
 import { execa } from 'execa'
 import { name } from '@/settings'
 
-type CmdOutput = { err?: string, res?: string }
+type CmdOutput = {
+	err?: string,
+	res?: string
+}
 
 export const runCmd = async (
 	command: string,

@@ -16,6 +16,8 @@ const aliases = [
 	{ find: '@@', replacement: '.' }
 ]
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default {
 	input: 'src/index.ts',
 	output: {
@@ -35,7 +37,7 @@ export default {
 		commonjs({
 			include: 'node_modules/**'
 		}),
-		terser({
+		isProduction && terser({
 			compress: true,
 			mangle: true
 		}),
